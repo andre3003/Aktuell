@@ -1,0 +1,13 @@
+/res/
+/Schemazeichnung.docx
+.idea/.gitignore
+.idea/artifacts/
+.idea/encodings.xml
+.idea/inspectionProfiles/
+.idea/misc.xml
+.idea/modules.xml
+.idea/uiDesigner.xml
+.idea/vcs.xml
+Schemazeichnung.docx
+Uhr.iml
+out/
