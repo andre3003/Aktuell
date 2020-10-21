@@ -31,8 +31,6 @@ public class MainGUI extends JFrame {
     public MyButton btAlarm = new MyButton("Alarmer");
 
 
-    GridSubPanel aM;
-    GridSubPanel pM;
     boolean setAlarm = false;
     Steuerung steuerung;
     public int xPos, yPos;
