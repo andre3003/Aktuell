@@ -27,8 +27,8 @@ public class MainGUI extends JFrame {
     private JPanel east = new JPanel(new FlowLayout(FlowLayout.CENTER, 5,3));
     private JPanel eastSub = new JPanel(new BorderLayout());
 
-    public MyButton btExit = new MyButton("Exit");
-    public MyButton btAlarm = new MyButton("Alarm");
+    public MyButton btExit = new MyButton("Exiter");
+    public MyButton btAlarm = new MyButton("Alarmer");
 
 
     GridSubPanel aM;
