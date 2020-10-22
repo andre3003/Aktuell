@@ -14,14 +14,14 @@ public class Grid extends JPanel {
         super();
         index = pIndex;
         text = pText;
-        setBorder(BorderFactory.createLineBorder(Color.white));
+        //setBorder(BorderFactory.createLineBorder(Color.white));
     }
 
     public Grid(String pText){
         super();
         text = pText;
         //setBorder(BorderFactory.createLineBorder(Color.white));
-        setPreferredSize(new Dimension(40, 40));
+        setPreferredSize(new Dimension(33, 33));
         setBackground(Color.BLACK);
         setBorder(null);
     }
@@ -56,7 +56,7 @@ public class Grid extends JPanel {
         //g.setColor(Color.white);
         //g.drawString(Integer.toString(index), 10,10);
 //        Font f = new Font("Serif", Font.BOLD, (int) (gui.getFrame().getWidth()/25));
-        Font f = new Font("Serif", Font.BOLD, (int) 27); // (800/25));
+        Font f = new Font("Serif", Font.BOLD, (int) 23); // (800/25));
         g.setFont(f);
 
         if (!this.text.equals("PM") && !this.text.equals("AM")) {
