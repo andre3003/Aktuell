@@ -6,33 +6,19 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
-public class GridSubPanel extends JPanel {
-    Grid [] grids;
+public class GridSubPanel {
     Steuerung steuerung;
     String name;
     String text;
     public ArrayList<Grid> list = new ArrayList<Grid>();
     boolean alarm = false;
 
-    public GridSubPanel(String pName, String pText, Steuerung pSteuerung){
+    public GridSubPanel(ArrayList pGrids){
         super();
-        name = pName;
-        text = pText;
-        steuerung = pSteuerung;
-        this.setLayout(new FlowLayout(FlowLayout.CENTER, 0,0));
-        this.setBackground(Color.BLACK);
-        createGrids();
-        //System.out.println(pName);
+        list = pGrids;
     }
 
-    public void createGrids(){
-        for (int i =0; i < text.length();i++){
-            list.add(new Grid(String.valueOf(text.charAt(i))));
-            this.add(list.get(i));
-        }
-    }
-
-    public void setShow(){
+   public void setShow(){
         for (int i=0; i< list.size();i++){
             list.get(i).setShow(true);
         }
@@ -54,9 +40,16 @@ public class GridSubPanel extends JPanel {
         }
     }
 
-    @Override
+    public ArrayList<Grid> getGrids(){
+        return list;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
 }
