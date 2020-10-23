@@ -195,12 +195,19 @@ public class Steuerung implements ActionListener{
 
     private void btAlarm_action(ActionEvent e) {
         SetAlarm d = new SetAlarm();
-        if (d.ok && alarm == null){
-            alarm = new Alarm(this);
-            alarm.setAlarmTime(d.getStunde(), d.getMinute());
-            mainUI.btAlarm.setForeground(Color.WHITE);
-            mainUI.btAlarm.setText(d.stunde + ":" + d.minute);
-
+        if (d.ok){
+            if (alarm == null) {
+                alarm = new Alarm(this);
+                alarm.setAlarmTime(d.getStunde(), d.getMinute());
+                mainUI.btAlarm.setForeground(Color.WHITE);
+                mainUI.btAlarm.setText(d.stunde + ":" + d.minute);
+            } else {
+                alarm.stopAlarm();
+                alarm = new Alarm(this);
+                alarm.setAlarmTime(d.getStunde(), d.getMinute());
+                mainUI.btAlarm.setForeground(Color.WHITE);
+                mainUI.btAlarm.setText(d.stunde + ":" + d.minute);
+            }
         } else if (!d.ok && alarm != null){
             alarm.stopAlarm();
             alarm = null;
