@@ -1,7 +1,5 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.font.LineMetrics;
-import java.awt.font.TextAttribute;
 
 public class Grid extends JPanel {
     int index;
@@ -14,14 +12,12 @@ public class Grid extends JPanel {
         super();
         index = pIndex;
         text = pText;
-        //setBorder(BorderFactory.createLineBorder(Color.white));
     }
 
     public Grid(String pText){
         super();
         text = pText;
-        //setBorder(BorderFactory.createLineBorder(Color.white));
-        setPreferredSize(new Dimension(33, 33));
+        setPreferredSize(new Dimension(30, 30));
         setBackground(Color.BLACK);
         setBorder(null);
     }
@@ -56,7 +52,7 @@ public class Grid extends JPanel {
         //g.setColor(Color.white);
         //g.drawString(Integer.toString(index), 10,10);
 //        Font f = new Font("Serif", Font.BOLD, (int) (gui.getFrame().getWidth()/25));
-        Font f = new Font("Serif", Font.BOLD, (int) 23); // (800/25));
+        Font f = new Font("Serif", Font.BOLD, (int) 26); // (800/25));
         g.setFont(f);
 
         if (!this.text.equals("PM") && !this.text.equals("AM")) {
@@ -69,29 +65,14 @@ public class Grid extends JPanel {
             }
         }
 
-        if (this.text.equals("PM") || this.text.equals("AM"))
-            g.drawString(text, 0, (int)(getHeight()/1.5));
-            //g.drawString(text, 0,0);
-
         if (isMinute){
             if (!show){
                 g.setColor(Color.darkGray);
-                g.fillOval((this.getWidth()/2)-5,(getHeight()/2)-5, 8,8);
+                g.fillOval((this.getWidth()/2)-5,(getHeight()/2)-5, 10,10);
             } else{
                 g.setColor(Color.white);
-                g.fillOval((this.getWidth()/2)-5,(getHeight()/2)-5, 8,8);
+                g.fillOval((this.getWidth()/2)-5,(getHeight()/2)-5, 10,10);
             }
         }
-    }
-
-    public static void drawUnderlinedString( Graphics g, int x, int y, String s )
-    {
-        g.drawString( s, x, y );
-
-        FontMetrics fm = g.getFontMetrics();
-        LineMetrics lm = fm.getLineMetrics( s, g );
-
-        g.fillRect( x, y + (int) lm.getUnderlineOffset(),
-                fm.stringWidth(s), (int) lm.getUnderlineThickness() );
     }
 }
