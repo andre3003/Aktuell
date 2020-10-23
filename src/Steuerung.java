@@ -51,132 +51,130 @@ public class Steuerung implements ActionListener{
     public void uhrStellen() {
         mainUI.resetAll();
         int zaehlerMinutenAnzeige = minute;
-//
-        mainUI.subPanelList.get(1).setShow(); //ES
-        mainUI.subPanelList.get(3).setShow(); //IST
-//
-//
-        for (int i = 0; i < mainUI.subPanelList.size(); i++) { //Was ist hier falsch???
+
+        mainUI.subPanelList.get(4).setShow(); //ES
+        mainUI.subPanelList.get(6).setShow(); //IST
+
+        for (int i = 0; i < mainUI.subPanelList.size(); i++) {
             if (mainUI.subPanelList.get(i).getName().equals(stunde_)) {
                 mainUI.subPanelList.get(i).setShow();
             }
         }
 //
-//        if (minute >= 5 && minute < 10) {
-//            for (int i = 0; i < mainGUI.panelList.size(); i++) {
-//                if (mainGUI.panelList.get(i).getName().equals("fuenfM") || mainGUI.panelList.get(i).getName().equals("nach")) {
-//                    mainGUI.panelList.get(i).setShow();
-//                }
-//            }
-//            zaehlerMinutenAnzeige = minute - 5;
-//        }
-//
-//        if (minute >= 10 && minute < 15) {
-//            for (int i = 0; i < mainGUI.panelList.size(); i++) {
-//                if (mainGUI.panelList.get(i).getName().equals("zehnM") || mainGUI.panelList.get(i).getName().equals("nach")) {
-//                    mainGUI.panelList.get(i).setShow();
-//                }
-//            }
-//            zaehlerMinutenAnzeige = minute - 10;
-//        }
-//
-//        if (minute >= 15 && minute < 20) {
-//            for (int i = 0; i < mainGUI.panelList.size(); i++) {
-//                if (mainGUI.panelList.get(i).getName().equals("viertel") || mainGUI.panelList.get(i).getName().equals("nach")) {
-//                    mainGUI.panelList.get(i).setShow();
-//                }
-//            }
-//            zaehlerMinutenAnzeige = minute - 15;
-//        }
-//
-//        if (minute >= 20 && minute < 25) {
-//            for (int i = 0; i < mainGUI.panelList.size(); i++) {
-//                if (mainGUI.panelList.get(i).getName().equals("zwanzig") || mainGUI.panelList.get(i).getName().equals("nach")) {
-//                    mainGUI.panelList.get(i).setShow();
-//                }
-//            }
-//            zaehlerMinutenAnzeige = minute - 20;
-//        }
-//
-//        if (minute >= 25 && minute < 30) {
-//            for (int i = 0; i < mainGUI.panelList.size(); i++) {
-//                if (mainGUI.panelList.get(i).getName().equals("fuenfM") || mainGUI.panelList.get(i).getName().equals("vor") || mainGUI.panelList.get(i).getName().equals("halb")) {
-//                    mainGUI.panelList.get(i).setShow();
-//                }
-//            }
-//            zaehlerMinutenAnzeige = minute - 25;
-//        }
-//
-//        if (minute >= 30 && minute < 35) {
-//            for (int i = 0; i < mainGUI.panelList.size(); i++) {
-//                if (mainGUI.panelList.get(i).getName().equals("halb")) {
-//                    mainGUI.panelList.get(i).setShow();
-//                }
-//            }
-//            zaehlerMinutenAnzeige = minute - 30;
-//        }
-//
-//
-//        if (minute >= 35 && minute < 40) {
-//            for (int i = 0; i < mainGUI.panelList.size(); i++) {
-//                if (mainGUI.panelList.get(i).getName().equals("fuenfM") || mainGUI.panelList.get(i).getName().equals("nach") || mainGUI.panelList.get(i).getName().equals("halb")) {
-//                    mainGUI.panelList.get(i).setShow();
-//                }
-//            }
-//            zaehlerMinutenAnzeige = minute - 35;
-//        }
-//
-//
-//        if (minute >= 40 && minute < 45) {
-//            for (int i = 0; i < mainGUI.panelList.size(); i++) {
-//                if (mainGUI.panelList.get(i).getName().equals("zwanzig") || mainGUI.panelList.get(i).getName().equals("vor")) {
-//                    mainGUI.panelList.get(i).setShow();
-//                }
-//            }
-//            zaehlerMinutenAnzeige = minute - 40;
-//        }
-//
-//        if (minute >= 45 && minute < 50) {
-//            for (int i = 0; i < mainGUI.panelList.size(); i++) {
-//                if (mainGUI.panelList.get(i).getName().equals("viertel") || mainGUI.panelList.get(i).getName().equals("vor")) {
-//                    mainGUI.panelList.get(i).setShow();
-//                }
-//            }
-//            zaehlerMinutenAnzeige = minute - 45;
-//        }
-//
-//        if (minute >= 50 && minute < 55) {
-//            for (int i = 0; i < mainGUI.panelList.size(); i++) {
-//                if (mainGUI.panelList.get(i).getName().equals("zehnM") || mainGUI.panelList.get(i).getName().equals("vor")) {
-//                    mainGUI.panelList.get(i).setShow();
-//                }
-//            }
-//            zaehlerMinutenAnzeige = minute - 50;
-//        }
-//
-//        if (minute >= 55 && minute < 60) {
-//            for (int i = 0; i < mainGUI.panelList.size(); i++) {
-//                if (mainGUI.panelList.get(i).getName().equals("fuenfM") || mainGUI.panelList.get(i).getName().equals("vor")) {
-//                    mainGUI.panelList.get(i).setShow();
-//                }
-//            }
-//            zaehlerMinutenAnzeige = minute - 55;
-//        }
-//
-//        if (zaehlerMinutenAnzeige > 0) {
-//            for (int i = 1; i <= zaehlerMinutenAnzeige; i++) {
-//                mainGUI.panelList.get(i - 1).setShow();
-//            }
-//        }
-//
-//        if (minute >= 0 && minute < 5) {
-//            for (int i = 0; i < mainGUI.panelList.size(); i++) {
-//                if (mainGUI.panelList.get(i).getName().equals("uhr")) {
-//                    mainGUI.panelList.get(i).setShow();
-//                }
-//            }
-//        }
-//        mainGUI.revalidate();
+        if (minute >= 5 && minute < 10) {
+            for (int i = 0; i < mainUI.subPanelList.size(); i++) {
+                if (mainUI.subPanelList.get(i).getName().equals("fuenfM") || mainUI.subPanelList.get(i).getName().equals("nach")) {
+                    mainUI.subPanelList.get(i).setShow();
+                }
+            }
+            zaehlerMinutenAnzeige = minute - 5;
+        }
+
+        if (minute >= 10 && minute < 15) {
+            for (int i = 0; i < mainUI.subPanelList.size(); i++) {
+                if (mainUI.subPanelList.get(i).getName().equals("zehnM") || mainUI.subPanelList.get(i).getName().equals("nach")) {
+                    mainUI.subPanelList.get(i).setShow();
+                }
+            }
+            zaehlerMinutenAnzeige = minute - 10;
+        }
+
+        if (minute >= 15 && minute < 20) {
+            for (int i = 0; i < mainUI.subPanelList.size(); i++) {
+                if (mainUI.subPanelList.get(i).getName().equals("viertel") || mainUI.subPanelList.get(i).getName().equals("nach")) {
+                    mainUI.subPanelList.get(i).setShow();
+                }
+            }
+            zaehlerMinutenAnzeige = minute - 15;
+        }
+
+        if (minute >= 20 && minute < 25) {
+            for (int i = 0; i < mainUI.subPanelList.size(); i++) {
+                if (mainUI.subPanelList.get(i).getName().equals("zwanzig") || mainUI.subPanelList.get(i).getName().equals("nach")) {
+                    mainUI.subPanelList.get(i).setShow();
+                }
+            }
+            zaehlerMinutenAnzeige = minute - 20;
+        }
+
+        if (minute >= 25 && minute < 30) {
+            for (int i = 0; i < mainUI.subPanelList.size(); i++) {
+                if (mainUI.subPanelList.get(i).getName().equals("fuenfM") || mainUI.subPanelList.get(i).getName().equals("vor") || mainUI.subPanelList.get(i).getName().equals("halb")) {
+                    mainUI.subPanelList.get(i).setShow();
+                }
+            }
+            zaehlerMinutenAnzeige = minute - 25;
+        }
+
+        if (minute >= 30 && minute < 35) {
+            for (int i = 0; i < mainUI.subPanelList.size(); i++) {
+                if (mainUI.subPanelList.get(i).getName().equals("halb")) {
+                    mainUI.subPanelList.get(i).setShow();
+                }
+            }
+            zaehlerMinutenAnzeige = minute - 30;
+        }
+
+
+        if (minute >= 35 && minute < 40) {
+            for (int i = 0; i < mainUI.subPanelList.size(); i++) {
+                if (mainUI.subPanelList.get(i).getName().equals("fuenfM") || mainUI.subPanelList.get(i).getName().equals("nach") || mainUI.subPanelList.get(i).getName().equals("halb")) {
+                    mainUI.subPanelList.get(i).setShow();
+                }
+            }
+            zaehlerMinutenAnzeige = minute - 35;
+        }
+
+
+        if (minute >= 40 && minute < 45) {
+            for (int i = 0; i < mainUI.subPanelList.size(); i++) {
+                if (mainUI.subPanelList.get(i).getName().equals("zwanzig") || mainUI.subPanelList.get(i).getName().equals("vor")) {
+                    mainUI.subPanelList.get(i).setShow();
+                }
+            }
+            zaehlerMinutenAnzeige = minute - 40;
+        }
+
+        if (minute >= 45 && minute < 50) {
+            for (int i = 0; i < mainUI.subPanelList.size(); i++) {
+                if (mainUI.subPanelList.get(i).getName().equals("viertel") || mainUI.subPanelList.get(i).getName().equals("vor")) {
+                    mainUI.subPanelList.get(i).setShow();
+                }
+            }
+            zaehlerMinutenAnzeige = minute - 45;
+        }
+
+        if (minute >= 50 && minute < 55) {
+            for (int i = 0; i < mainUI.subPanelList.size(); i++) {
+                if (mainUI.subPanelList.get(i).getName().equals("zehnM") || mainUI.subPanelList.get(i).getName().equals("vor")) {
+                    mainUI.subPanelList.get(i).setShow();
+                }
+            }
+            zaehlerMinutenAnzeige = minute - 50;
+        }
+
+        if (minute >= 55 && minute < 60) {
+            for (int i = 0; i < mainUI.subPanelList.size(); i++) {
+                if (mainUI.subPanelList.get(i).getName().equals("fuenfM") || mainUI.subPanelList.get(i).getName().equals("vor")) {
+                    mainUI.subPanelList.get(i).setShow();
+                }
+            }
+            zaehlerMinutenAnzeige = minute - 55;
+        }
+
+        if (zaehlerMinutenAnzeige > 0) {
+            for (int i = 0; i < zaehlerMinutenAnzeige; i++) {
+                mainUI.subPanelList.get(i).setShow();
+            }
+        }
+
+        if (minute >= 0 && minute < 5) {
+            for (int i = 0; i < mainUI.subPanelList.size(); i++) {
+                if (mainUI.subPanelList.get(i).getName().equals("uhr")) {
+                    mainUI.subPanelList.get(i).setShow();
+                }
+            }
+        }
         mainUI.repaint();
     }
 
@@ -188,15 +186,16 @@ public class Steuerung implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         MyButton temp = (MyButton) e.getSource();
         //System.out.println(((MyButton) e.getSource()).getText());
-        switch (temp.getText()){
-            case "Exit":
+        switch (temp.getName()){
+            case "btExit":
                 System.exit(0);
-            case "Alarm":
+            case "btAlarm":
                 btAlarm_action(e);
         }
     }
 
     private void btAlarm_action(ActionEvent e) {
+        System.out.println("TEST");
         SetAlarm d = new SetAlarm();
         if (d.ok && alarm == null){
             alarm = new Alarm(this);
