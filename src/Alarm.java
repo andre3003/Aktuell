@@ -19,6 +19,7 @@ public class Alarm {
     Timer alarmTimer = new Timer(1000, null);
     ArrayList<String> clipList;
     String aktClip;
+    int numberOfTracks = 0;
     Random r = new Random();
     Steuerung steuerung;
 
@@ -47,12 +48,14 @@ public class Alarm {
 
             while(temp != null){
                 clipList.add(temp);
+                numberOfTracks++;
                 temp = in.readLine();
             }
         } catch (Exception e){
             System.out.println("Lesefehler");
         }
-        aktClip = clipList.get(r.nextInt(4));
+        aktClip = clipList.get(r.nextInt(numberOfTracks)-1);
+
     }
 
     private void alarmTimer_action(ActionEvent e) {
