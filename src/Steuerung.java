@@ -185,7 +185,6 @@ public class Steuerung implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
         MyButton temp = (MyButton) e.getSource();
-        //System.out.println(((MyButton) e.getSource()).getText());
         switch (temp.getName()){
             case "btExit":
                 System.exit(0);
@@ -195,7 +194,6 @@ public class Steuerung implements ActionListener{
     }
 
     private void btAlarm_action(ActionEvent e) {
-        System.out.println("TEST");
         SetAlarm d = new SetAlarm();
         if (d.ok && alarm == null){
             alarm = new Alarm(this);
