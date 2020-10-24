@@ -39,23 +39,11 @@ public class Alarm {
         createClipList();
     }
 
-    public void createClipList(){
-        clipList = new ArrayList();
-        try{
-            FileReader reader = new FileReader("res/Clips/Titelliste.txt");
-            BufferedReader in = new BufferedReader(reader);
-            String temp = in.readLine();
-
-            while(temp != null){
-                clipList.add(temp);
-                numberOfTracks++;
-                temp = in.readLine();
-            }
-        } catch (Exception e){
-            System.out.println("Lesefehler");
-        }
-        aktClip = clipList.get(r.nextInt(numberOfTracks)-1);
-
+    public void createClipList(){   //Liste wird aus dem Dateisystem ausgelesen.
+        File path = new File("./res/clips");
+        String [] clipList_ = path.list();
+        aktClip = clipList_[r.nextInt(clipList_.length)-1];
+        System.out.println(aktClip);
     }
 
     private void alarmTimer_action(ActionEvent e) {
